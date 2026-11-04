@@ -77,10 +77,12 @@ const year = computed(() => new Date().getFullYear())
           </div>
 
           <!-- Hero Typography with Responsive Slits SVG -->
-          <h1 class="text-4xl font-black italic tracking-tighter leading-[1.05] sm:text-7xl lg:text-8xl flex flex-wrap items-baseline gap-x-3 sm:gap-x-5">
+<!-- Hero Typography with Responsive Slits SVG -->
+          <h1 class="text-4xl font-black italic tracking-tighter leading-[1.05] sm:text-7xl lg:text-8xl flex flex-wrap items-center gap-x-3 sm:gap-x-5">
             <span class="pr-1">Keep You</span>
             
-            <span class="relative inline-flex items-center ml-0.5 sm:ml-2">
+            <!-- Nudged up slightly with -translate-y-[2px] -->
+            <span class="relative inline-flex items-center -translate-y-[1px] sm:translate-y-0.7 ml-0.5 sm:ml-2">
               <!-- Back Glow -->
               <span class="absolute inset-0 blur-lg bg-red-600/40 -z-10"></span>
               
@@ -94,14 +96,14 @@ const year = computed(() => new Date().getFullYear())
 
                   <mask id="cutMask">
                     <rect width="100%" height="100%" fill="white" />
-                    <line x1="0" y1="48" x2="350" y2="48" stroke="black" stroke-width="2.5" />
-                    <line x1="0" y1="53" x2="350" y2="53" stroke="black" stroke-width="2" />
+                    <line x1="0" y1="56" x2="350" y2="56" stroke="black" stroke-width="2.5" />
+                    <line x1="0" y1="61" x2="350" y2="61" stroke="black" stroke-width="2" />
                   </mask>
                 </defs>
 
                 <text
                   x="8"
-                  y="65"
+                  y="74"
                   fill="url(#movingGrad)"
                   font-weight="900"
                   font-style="italic"
@@ -115,7 +117,7 @@ const year = computed(() => new Date().getFullYear())
               </svg>
             </span>
 
-            <span class="w-full -mt-1 sm:-mt-4 lg:-mt-6">Always!</span>
+            <span class="w-full -mt-1 sm:-mt-4 lg:-mt-3">Always!</span>
           </h1>
 
           <p class="mt-4 sm:mt-6 max-w-xl text-sm leading-relaxed text-neutral-300 sm:text-lg">
