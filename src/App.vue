@@ -12,78 +12,127 @@ function closeMenu() {
 <template>
   <div class="flex min-h-screen flex-col bg-neutral-950 text-neutral-100 selection:bg-red-600 selection:text-white">
     <!-- Header -->
-    <header
-      class="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4 border-b border-neutral-800 bg-neutral-950/90 px-5 py-4 backdrop-blur-md sm:px-8 lg:px-20"
-    >
-      <RouterLink
-        to="/"
-        class="flex items-center gap-3.5 group"
-        aria-label="La'Croc Tyre Health Center and Mechanical Services home"
-        @click="closeMenu"
-      >
-
-        <div class="relative flex h-10 max-w-[140px] items-center justify-center">
-          <img 
-            src="@/assets/logo.png" 
-            alt="La'Croc Logo" 
-            class="max-h-10 w-auto object-contain"
-            @error="($event.target as HTMLElement).style.display = 'none'"
-          />
-        </div>
-
-        <span class="flex flex-col gap-0.5">
-          <!-- Styled to match that heavy italic racing logo font vibe -->
-          <span class="text-lg font-black italic tracking-tighter uppercase text-white group-hover:text-red-500 transition drop-shadow-sm">
-            <span class="text-white">LA'</span><span class="text-red-600">CROC</span>
-          </span>
-          <span class="text-[9px] tracking-[0.2em] text-neutral-400 font-semibold uppercase">
-            Tyre Health & Mechanical
-          </span>
-        </span>
-      </RouterLink>
-
-      <!-- Mobile menu toggle -->
-      <button
-        type="button"
-        class="rounded border border-neutral-700 bg-neutral-900 px-4 py-2 text-sm font-semibold text-neutral-200 transition hover:border-red-500 hover:text-red-400 sm:hidden"
-        :aria-expanded="menuOpen"
-        aria-controls="site-navigation"
-        :aria-label="menuOpen ? 'Close navigation' : 'Open navigation'"
-        @click="menuOpen = !menuOpen"
-      >
-        {{ menuOpen ? 'Close' : 'Menu' }}
-      </button>
-
-      <!-- Navigation -->
-      <nav
-        id="site-navigation"
-        class="w-full flex-col gap-2 sm:flex sm:w-auto sm:flex-row sm:items-center sm:gap-8"
-        :class="menuOpen ? 'flex' : 'hidden sm:flex'"
-      >
+    <header class="sticky top-0 z-50 border-b border-neutral-800 bg-neutral-950/95 backdrop-blur-md">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-8 sm:py-4 lg:px-20">
+        
+        <!-- Logo & Branding -->
         <RouterLink
           to="/"
-          class="py-3 text-sm font-medium text-neutral-300 transition hover:text-red-500 sm:py-2"
+          class="flex items-center gap-2.5 sm:gap-3.5 group shrink-0"
+          aria-label="La'Croc Tyre Health Center and Mechanical Services home"
           @click="closeMenu"
         >
-          Home
+          <div class="relative flex h-9 sm:h-10 max-w-[120px] sm:max-w-[140px] items-center justify-center">
+            <img 
+              src="@/assets/logo.png" 
+              alt="La'Croc Logo" 
+              class="max-h-9 sm:max-h-10 w-auto object-contain"
+              @error="($event.target as HTMLElement).style.display = 'none'"
+            />
+          </div>
+
+          <span class="flex flex-col">
+            <span class="text-base sm:text-lg font-black italic tracking-tighter uppercase text-white group-hover:text-red-500 transition drop-shadow-sm leading-tight">
+              <span class="text-white">LA'</span><span class="text-red-600">CROC</span>
+            </span>
+            <span class="text-[8px] sm:text-[9px] tracking-[0.18em] text-neutral-400 font-semibold uppercase">
+              Tyre Health & Mechanical
+            </span>
+          </span>
         </RouterLink>
 
-        <RouterLink
-          to="/about"
-          class="py-3 text-sm font-medium text-neutral-300 transition hover:text-red-500 sm:py-2"
-          @click="closeMenu"
-        >
-          About
-        </RouterLink>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex md:items-center md:gap-8">
+          <RouterLink
+            to="/"
+            class="text-sm font-semibold tracking-wide text-neutral-300 transition hover:text-red-500"
+          >
+            Home
+          </RouterLink>
 
-        <RouterLink
-          to="/contact"
-          class="bg-red-600 px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-red-500 shadow-lg shadow-red-950/40 sm:py-2.5"
-          @click="closeMenu"
+          <RouterLink
+            to="/about"
+            class="text-sm font-semibold tracking-wide text-neutral-300 transition hover:text-red-500"
+          >
+            About
+          </RouterLink>
+
+          <RouterLink
+            to="/contact"
+            class="bg-red-600 px-5 py-2.5 text-xs font-black uppercase tracking-wider text-white transition hover:bg-red-500 shadow-lg shadow-red-950/50"
+          >
+            Contact Us
+          </RouterLink>
+        </nav>
+
+        <!-- Mobile 3-Line Hamburger Button -->
+        <button
+          type="button"
+          class="relative flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-neutral-800 bg-neutral-900/80 p-2 text-neutral-300 transition hover:border-red-500/60 hover:text-white focus:outline-none md:hidden"
+          :aria-expanded="menuOpen"
+          aria-controls="mobile-navigation"
+          :aria-label="menuOpen ? 'Close navigation' : 'Open navigation'"
+          @click="menuOpen = !menuOpen"
         >
-          Contact Us
-        </RouterLink>
-      </nav>
+          <!-- Line 1 -->
+          <span
+            class="h-0.5 w-5 rounded-full bg-current transition-all duration-300 ease-in-out"
+            :class="menuOpen ? 'translate-y-2 rotate-45 bg-red-500' : ''"
+          />
+          <!-- Line 2 -->
+          <span
+            class="h-0.5 w-5 rounded-full bg-current transition-all duration-200 ease-in-out"
+            :class="menuOpen ? 'opacity-0' : 'opacity-100'"
+          />
+          <!-- Line 3 -->
+          <span
+            class="h-0.5 w-5 rounded-full bg-current transition-all duration-300 ease-in-out"
+            :class="menuOpen ? '-translate-y-2 -rotate-45 bg-red-500' : ''"
+          />
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Navigation -->
+      <transition
+        enter-active-class="transition duration-200 ease-out"
+        enter-from-class="opacity-0 -translate-y-2"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition duration-150 ease-in"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-2"
+      >
+        <nav
+          v-if="menuOpen"
+          id="mobile-navigation"
+          class="border-t border-neutral-800 bg-neutral-950/98 px-5 py-4 space-y-2 md:hidden"
+        >
+          <RouterLink
+            to="/"
+            class="block rounded-md px-3 py-2.5 text-sm font-semibold tracking-wide text-neutral-200 hover:bg-neutral-900 hover:text-red-400 transition"
+            @click="closeMenu"
+          >
+            Home
+          </RouterLink>
+
+          <RouterLink
+            to="/about"
+            class="block rounded-md px-3 py-2.5 text-sm font-semibold tracking-wide text-neutral-200 hover:bg-neutral-900 hover:text-red-400 transition"
+            @click="closeMenu"
+          >
+            About
+          </RouterLink>
+
+          <div class="pt-2">
+            <RouterLink
+              to="/contact"
+              class="block w-full bg-red-600 py-3 text-center text-xs font-black uppercase tracking-wider text-white shadow-lg shadow-red-950/60 transition hover:bg-red-500"
+              @click="closeMenu"
+            >
+              Contact Us
+            </RouterLink>
+          </div>
+        </nav>
+      </transition>
     </header>
 
     <!-- Route content -->
