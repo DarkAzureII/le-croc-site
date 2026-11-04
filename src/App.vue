@@ -69,14 +69,6 @@ function closeMenu() {
         </RouterLink>
 
         <RouterLink
-          to="/services"
-          class="py-3 text-sm font-medium text-neutral-300 transition hover:text-red-500 sm:py-2"
-          @click="closeMenu"
-        >
-          Services
-        </RouterLink>
-
-        <RouterLink
           to="/about"
           class="py-3 text-sm font-medium text-neutral-300 transition hover:text-red-500 sm:py-2"
           @click="closeMenu"
@@ -110,10 +102,10 @@ function closeMenu() {
             LA'CROC TYRE HEALTH CENTER
           </p>
           <p class="mt-2 text-xs text-neutral-500">
-            Snoekfishmalatji Projects Pty Ltd (Reg No.: 2019/16366/07)[cite: 1, 2, 3].
+            Snoekfishmalatji Projects Pty Ltd (Reg No.: 2019/163665/07).
           </p>
           <p class="mt-3 text-xs text-neutral-400 italic">
-            "Keep You Moving Always!"[cite: 3]
+            "Keep You Moving Always!"
           </p>
         </div>
 
@@ -129,8 +121,8 @@ function closeMenu() {
         <div>
           <p class="font-bold text-neutral-200">Direct Contact</p>
           <p class="mt-2 text-xs text-neutral-400">
-            Phone / WhatsApp: <a href="tel:0729734018" class="text-red-400 font-bold hover:underline">072 973 4018</a>[cite: 1, 2]<br />
-            Email: <a href="mailto:sagaciouskr@gmail.com" class="text-neutral-300 hover:underline">sagaciouskr@gmail.com</a>[cite: 1, 2]
+            Phone / WhatsApp: <a href="tel:0729734018" class="text-red-400 font-bold hover:underline">072 973 4018</a><br />
+            Email: <a href="mailto:sagaciouskr@gmail.com" class="text-neutral-300 hover:underline">sagaciouskr@gmail.com</a>
           </p>
         </div>
       </div>
