@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const stats = [
-  { value: '100%', label: 'Registered Entity', detail: 'Reg: 2019/16366/07' },
+  { value: '100%', label: 'Registered Entity', detail: 'Reg: 2019/163665/07' },
   { value: '0711', label: 'Local Facility', detail: '1 Sir La\'Croc Ave, Ntsima' },
   { value: 'Mon-Sun', label: 'Operational Coverage', detail: 'Open 7 Days a Week' },
   { value: 'OBD-II', label: 'Modern Diagnostics', detail: 'Multi-make scanning' },
@@ -95,7 +95,7 @@ const values = [
           <div>
             <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-400">Entity Details</span>
             <h4 class="text-lg font-bold text-white mt-1">Snoekfishmalatji Projects Pty Ltd</h4>
-            <p class="text-xs text-neutral-400 mt-0.5 font-mono">Company Registration: 2019/16366/07</p>
+            <p class="text-xs text-neutral-400 mt-0.5 font-mono">Company Registration: 2019/163665/07</p>
           </div>
 
           <a 
